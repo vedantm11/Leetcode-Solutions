@@ -1,0 +1,1 @@
+Here the imp thing to note is we use Prefix Sums and the subarrays having equal remainder are the ones divisble by K.
