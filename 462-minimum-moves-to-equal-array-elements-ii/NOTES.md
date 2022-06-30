@@ -1,0 +1,1 @@
+The problem is like Meeting the median, meeting the median desn't matter tho we only need to consider differences between the numbers.
