@@ -1,0 +1,1 @@
+__builtin_popcount to count number of 1's in a decimal number
