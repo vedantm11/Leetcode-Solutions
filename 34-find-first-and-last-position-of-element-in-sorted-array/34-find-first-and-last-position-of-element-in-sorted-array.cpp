@@ -18,9 +18,11 @@ public:
     
     vector<int> searchRange(vector<int>& nums, int target) {
         int n=nums.size();
+        if(n == 0) return {-1,-1};
         int l = 0, r = n - 1;
         int left = get_bounds(nums,l,r,target,true);
-        int right = get_bounds(nums,l,r,target,false);
+        if(left == -1) return {-1,-1};
+        int right = get_bounds(nums,left,r,target,false);
         return {left,right};
     }
 };
