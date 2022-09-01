@@ -13,26 +13,19 @@ class Solution {
 public:
     int ans = 0;
     
-    void traverse(TreeNode* root,vector<int> nodes)
+    void traverse(TreeNode* root,int mx)
     {
         if(!root) return;
-        int flag = 0;
-        for( auto i : nodes){
-            if(i > root->val){
-                flag  = 1;
-                break;
-            }
-        }
-        if(!flag) ans++;
-        nodes.push_back(root -> val);
-        traverse(root->left,nodes);
-        traverse(root->right,nodes);
+        if(mx <= root->val) ans++;
+         mx = max(mx,root->val);
+        traverse(root->left,mx);
+        traverse(root->right,mx);
     }
     
     
     int goodNodes(TreeNode* root) {
         vector<int> nodes;
-        traverse(root,nodes);
+        traverse(root,INT_MIN);
         return ans;
         
     }
